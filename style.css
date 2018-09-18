@@ -1,6 +1,6 @@
 body{
 	
-	margin: 0px 10px 0px 10px;
+	margin: 0px 0px 0px 0px;
 	background-image: url(star1.jpg);
 	padding:0;
 }
@@ -12,37 +12,52 @@ body > img {
     }
 
 .container {
-	display: grid;
-	margin:auto;
-	grid-template-columns: repeat(5,20%);
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(5,20%);
     grid-template-rows: repeat(5,1fr);
-    grid-gap:10px;
-	
-	text-align: center;
-	align-item:center;
-	align-content: center;
-	
-	
-
-
+    grid-gap: 2px;
+    text-align: justify;
+    align-content: center;
+    
 }
 
 .starwars {
-	grid-area:1/2/6/5;
-
-	/*background-color: black;*/
-	text-align: center;
-	font-family: 'Press Start 2P', cursive;
-	color:yellow;
-	transform:rotate3d(1, 0, 0, 90);
-	animation: mymove 5s infinite;
-
+    grid-area: 1/2/6/5;
+    /*background-color: black;*/
+    text-align: justify;
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+    animation: mymove 5s infinite;
+    transform: perspective(300px) rotateX(45deg);
 }
 
-@keyframes mymove {
-    0%   {top: 0px;}
-    25%  {top: 200px;}
-    50%  {top: 100px;}
-    75%  {top: 200px;}
-    100% {top: 0px;}
+p#start{
+    position:relative;
+    width: 16em;
+    margin: 20% auto;
+    color:#4ee;
+    opacity:0;
+    z-index:1;
+    animation: intro 2s ease-out;
+    
+}
+@-webkit-keyframes intro {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes intro {
+    0%   {opacity:1;}
+    90% {opacity: 1;    }
+    100% { opacity: 0;    }
 }
